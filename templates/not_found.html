@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Страница не найдена — ЗАРЯ{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="empty-state empty-state--page">
+            <p class="eyebrow">Ошибка 404</p>
+            <h1>Этой страницы нет</h1>
+            <p>Возможно, украшение уже разобрали. Загляните в каталог — там есть ещё.</p>
+            <a class="btn btn-primary shimmer" href="{{ url_for('catalog') }}">В каталог</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

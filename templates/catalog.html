@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% from "_product_card.html" import product_card %}
+
+{% block title %}Каталог — ЗАРЯ{% endblock %}
+
+{% block content %}
+<section class="page-head">
+    <div class="container">
+        <p class="eyebrow">Коллекция «Тёплая осень»</p>
+        <h1>Каталог украшений</h1>
+        <p class="page-lead">Восемь вещей ручной работы. Выберите настроение — остальное сделает золото.</p>
+    </div>
+</section>
+
+<section class="section section--tight">
+    <div class="container">
+        <div class="filter-row" id="filters" role="group" aria-label="Фильтр по категориям">
+            <button class="chip is-active" type="button" data-filter="all">Все</button>
+            {% for category in products|map(attribute='category')|unique %}
+                <button class="chip" type="button" data-filter="{{ category }}">{{ category }}</button>
+            {% endfor %}
+        </div>
+
+        <div class="product-grid" id="catalog-grid">
+            {% for product in products %}
+                {{ product_card(product) }}
+            {% endfor %}
+        </div>
+
+        <p class="empty-state" id="catalog-empty" hidden>В этой категории пока пусто. Загляните в «Все».</p>
+    </div>
+</section>
+{% endblock %}

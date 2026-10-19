@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% from "_product_card.html" import product_card %}
+
+{% block title %}Поиск — ЗАРЯ{% endblock %}
+
+{% block content %}
+<section class="page-head">
+    <div class="container">
+        <p class="eyebrow">Поиск</p>
+        <h1>Найти украшение</h1>
+
+        <form class="search-page-form" action="{{ url_for('search') }}" method="get" role="search">
+            <input type="search" name="query" value="{{ query }}" placeholder="Например, кольцо или брошь" aria-label="Поиск по каталогу" autofocus>
+            <button class="btn btn-primary" type="submit">Искать</button>
+        </form>
+
+        {% if query %}
+            <p class="page-lead">
+                {% if results %}
+                    Найдено: {{ results|length }} — по запросу «{{ query }}»
+                {% else %}
+                    По запросу «{{ query }}» ничего не нашлось.
+                {% endif %}
+            </p>
+        {% endif %}
+    </div>
+</section>
+
+<section class="section section--tight">
+    <div class="container">
+        {% if results %}
+            <div class="product-grid">
+                {% for product in results %}
+                    {{ product_card(product) }}
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <div class="empty-icon" aria-hidden="true">✦</div>
+                <h2>Попробуйте иначе</h2>
+                <p>Например: «кольцо», «серьги», «колье» или «брошь».</p>
+                <a class="btn btn-ghost" href="{{ url_for('catalog') }}">Открыть весь каталог</a>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

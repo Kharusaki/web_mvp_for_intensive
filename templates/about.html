@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}О нас — ЗАРЯ{% endblock %}
+
+{% block content %}
+<section class="page-head">
+    <div class="container">
+        <p class="eyebrow">Мастерская ЗАРЯ</p>
+        <h1>О нас</h1>
+        <p class="page-lead">
+            Мы делаем украшения, в которых узнаётся русский стиль — без музейной пыли
+            и тяжёлых костюмов. Только металл, камень и тёплый осенний свет.
+        </p>
+    </div>
+</section>
+
+<section class="section section--tight">
+    <div class="container about-grid">
+        <div class="about-story">
+            <h2 class="section-title">Как всё началось</h2>
+            <p>
+                В 2021 году мы нашли бабушкину брошь с красной эмалью. Вещь была старой,
+                но носить её хотелось каждый день. Так появилась идея: взять мотивы,
+                которые знают все, и сделать их современными.
+            </p>
+            <p>
+                Сегодня небольшая мастерская в Москве выпускает коллекции дважды в год.
+                Партии короткие: мы не гонимся за количеством и проверяем каждую застёжку
+                руками.
+            </p>
+
+            <ul class="value-list">
+                <li><strong>Материалы.</strong> Серебро 925, латунь с золочением, натуральный камень и горячая эмаль.</li>
+                <li><strong>Ручная сборка.</strong> От эскиза до упаковки — внутри мастерской.</li>
+                <li><strong>Честные цены.</strong> Без наценки за громкое имя: вы платите за вещь и работу.</li>
+            </ul>
+        </div>
+
+        <aside class="about-card">
+            <div class="about-mark" aria-hidden="true">✦</div>
+            <h2>ЗАРЯ в цифрах</h2>
+            <dl class="stats">
+                <div><dt>5 лет</dt><dd>собираем коллекции</dd></div>
+                <div><dt>2 400+</dt><dd>довольных клиентов</dd></div>
+                <div><dt>14 дней</dt><dd>на обмен без вопросов</dd></div>
+            </dl>
+            <a class="btn btn-primary shimmer" href="{{ url_for('catalog') }}">Перейти в каталог</a>
+        </aside>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="quote-block reveal">
+            <p class="quote">
+                «Русский стиль — это не сарафан. Это цвет, фактура и ощущение
+                тепла, которое остаётся с вами.»
+            </p>
+            <p class="quote-author">Анна Заря, основательница мастерской</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

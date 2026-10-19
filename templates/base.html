@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ЗАРЯ — украшения в русском стиле{% endblock %}</title>
+    <meta name="description" content="Украшения ручной работы в русском стиле: кольца, серьги, колье и броши. Тёплая осенняя коллекция.">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/favicon.svg') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<div class="page-glow" aria-hidden="true"></div>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="logo" href="{{ url_for('index') }}" aria-label="ЗАРЯ — на главную">
+            <span class="logo-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <circle cx="12" cy="12" r="3.2"/>
+                    <path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/>
+                </svg>
+            </span>
+            <span class="logo-text">
+                <strong>ЗАРЯ</strong>
+                <small>украшения с характером</small>
+            </span>
+        </a>
+
+        <nav class="main-nav" id="main-nav" aria-label="Главное меню">
+            <a href="{{ url_for('index') }}" class="{% if active == 'home' %}is-active{% endif %}">Главная</a>
+            <a href="{{ url_for('catalog') }}" class="{% if active == 'catalog' %}is-active{% endif %}">Каталог</a>
+            <a href="{{ url_for('about') }}" class="{% if active == 'about' %}is-active{% endif %}">О нас</a>
+        </nav>
+
+        <div class="header-actions">
+            <div class="search" id="search">
+                <form class="search-form" action="{{ url_for('search') }}" method="get" role="search">
+                    <input type="search" name="query" id="search-input" placeholder="Найти украшение…" aria-label="Поиск по каталогу" autocomplete="off">
+                </form>
+                <button class="icon-btn" id="search-toggle" type="button" aria-label="Открыть поиск">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                        <circle cx="11" cy="11" r="6.5"/>
+                        <path d="m16 16 4.5 4.5"/>
+                    </svg>
+                </button>
+            </div>
+
+            <a class="icon-btn cart-link" href="{{ url_for('cart') }}" aria-label="Корзина">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <path d="M5 8h14l-1.2 11.2a1.5 1.5 0 0 1-1.5 1.3H7.7a1.5 1.5 0 0 1-1.5-1.3L5 8Z"/>
+                    <path d="M9 8V6.5a3 3 0 0 1 6 0V8"/>
+                </svg>
+                <span class="cart-badge" id="cart-badge" hidden>0</span>
+            </a>
+
+            <a class="icon-btn account-link" href="{{ url_for('account') }}" aria-label="Личный кабинет">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                    <circle cx="12" cy="8.5" r="3.5"/>
+                    <path d="M4.5 20a7.5 7.5 0 0 1 15 0"/>
+                </svg>
+            </a>
+
+            <button class="icon-btn burger" id="burger" type="button" aria-label="Меню" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <div class="footer-brand">
+            <span class="logo-text"><strong>ЗАРЯ</strong><small>украшения с характером</small></span>
+            <p>Ручная работа, натуральные материалы и мотивы, знакомые с детства.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Меню в подвале">
+            <a href="{{ url_for('index') }}">Главная</a>
+            <a href="{{ url_for('catalog') }}">Каталог</a>
+            <a href="{{ url_for('about') }}">О нас</a>
+            <a href="{{ url_for('account') }}">Личный кабинет</a>
+        </nav>
+
+        <div class="footer-contacts">
+            <p>Москва, ул. Осенняя, 12</p>
+            <p><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+            <p class="footer-note">Пн–Сб, 10:00–20:00</p>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+        <span>© 2026 ЗАРЯ. Все права защищены.</span>
+        <span>Доставка по всей России</span>
+    </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

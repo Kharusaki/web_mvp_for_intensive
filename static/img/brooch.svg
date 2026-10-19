@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Брошь Жар-птица">
+  <defs>
+    <radialGradient id="bg4" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#3d2418"/>
+      <stop offset="60%" stop-color="#241712"/>
+      <stop offset="100%" stop-color="#150e0b"/>
+    </radialGradient>
+    <linearGradient id="feather4" x1="0" y1="0" x2="1" y2="0.6">
+      <stop offset="0%" stop-color="#f7e2b0"/>
+      <stop offset="35%" stop-color="#e0a84f"/>
+      <stop offset="68%" stop-color="#c1472f"/>
+      <stop offset="100%" stop-color="#6d1024"/>
+    </linearGradient>
+    <linearGradient id="feather4b" x1="0" y1="0" x2="1" y2="0.6">
+      <stop offset="0%" stop-color="#f7e2b0"/>
+      <stop offset="45%" stop-color="#d99a45"/>
+      <stop offset="100%" stop-color="#8a1a2c"/>
+    </linearGradient>
+    <radialGradient id="glow4" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e0703f" stop-opacity=".4"/>
+      <stop offset="100%" stop-color="#e0703f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#bg4)"/>
+  <circle cx="300" cy="300" r="230" fill="none" stroke="#e8bf7a" stroke-opacity=".12"/>
+  <circle cx="300" cy="300" r="190" fill="none" stroke="#e8bf7a" stroke-opacity=".07" stroke-dasharray="2 12"/>
+  <circle cx="310" cy="300" r="170" fill="url(#glow4)"/>
+
+  <!-- перья -->
+  <g stroke="#2a160e" stroke-opacity=".5" stroke-width="2">
+    <path d="M290 410 C230 380 150 330 118 250 C186 264 252 296 300 344 Z" fill="url(#feather4b)"/>
+    <path d="M296 402 C250 348 200 296 196 214 C258 244 302 300 322 356 Z" fill="url(#feather4)"/>
+    <path d="M306 396 C292 330 292 258 330 190 C356 254 356 330 344 386 Z" fill="url(#feather4)"/>
+    <path d="M316 400 C348 342 386 292 446 262 C442 330 404 382 348 414 Z" fill="url(#feather4b)"/>
+    <path d="M322 408 C372 386 436 372 486 386 C440 428 378 436 330 424 Z" fill="url(#feather4)"/>
+  </g>
+
+  <!-- прожилки -->
+  <g fill="none" stroke="#f7e2b0" stroke-opacity=".5" stroke-width="3" stroke-linecap="round">
+    <path d="M156 268 C210 288 258 322 290 366"/>
+    <path d="M220 244 C248 280 276 320 296 358"/>
+    <path d="M310 232 C318 288 320 336 316 378"/>
+    <path d="M396 288 C368 322 344 356 330 388"/>
+    <path d="M438 380 C410 394 376 404 348 410"/>
+  </g>
+
+  <!-- глаза и камень -->
+  <circle cx="288" cy="402" r="13" fill="#1c0e0b" stroke="#e8bf7a" stroke-width="3"/>
+  <circle cx="286" cy="399" r="3.5" fill="#ffe9bd"/>
+  <path d="M320 300 l8 12 -8 12 -8 -12 z" fill="#f6d9a0"/>
+
+  <path d="M470 200 l5 13 13 5 -13 5 -5 13 -5 -13 -13 -5 13 -5 z" fill="#f6dfa8" fill-opacity=".75"/>
+  <path d="M150 396 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 z" fill="#f6dfa8" fill-opacity=".5"/>
+</svg>

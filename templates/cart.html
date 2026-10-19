@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Корзина — ЗАРЯ{% endblock %}
+
+{% block content %}
+<section class="page-head">
+    <div class="container">
+        <p class="eyebrow">Почти ваше</p>
+        <h1>Корзина</h1>
+        <p class="page-lead">Проверьте состав заказа — и оформим доставку.</p>
+    </div>
+</section>
+
+<section class="section section--tight">
+    <div class="container cart-layout">
+        <div class="cart-main">
+            <div class="cart-list" id="cart-items"></div>
+
+            <div class="cart-empty" id="cart-empty" hidden>
+                <div class="empty-icon" aria-hidden="true">✦</div>
+                <h2>Пока пусто</h2>
+                <p>Добавьте украшение из каталога — и оно появится здесь.</p>
+                <a class="btn btn-primary shimmer" href="{{ url_for('catalog') }}">Перейти в каталог</a>
+            </div>
+        </div>
+
+        <aside class="cart-summary" id="cart-summary" hidden>
+            <h2>Итого</h2>
+            <div class="summary-row">
+                <span>Товары</span>
+                <span id="summary-subtotal">0 ₽</span>
+            </div>
+            <div class="summary-row">
+                <span>Доставка</span>
+                <span id="summary-delivery">0 ₽</span>
+            </div>
+            <div class="summary-row summary-total">
+                <span>К оплате</span>
+                <span id="summary-total">0 ₽</span>
+            </div>
+            <button class="btn btn-primary shimmer" id="checkout" type="button">Оформить заказ</button>
+            <p class="summary-note">Бесплатная доставка от 5 000 ₽. Оплата картой или при получении.</p>
+        </aside>
+    </div>
+</section>
+{% endblock %}

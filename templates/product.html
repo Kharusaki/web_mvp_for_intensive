@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% from "_product_card.html" import product_card %}
+
+{% block title %}{{ item.name }} — ЗАРЯ{% endblock %}
+
+{% block content %}
+<section class="section product-page">
+    <div class="container">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <a href="{{ url_for('index') }}">Главная</a>
+            <span>/</span>
+            <a href="{{ url_for('catalog') }}">Каталог</a>
+            <span>/</span>
+            <span class="current">{{ item.name }}</span>
+        </nav>
+
+        <div class="product-layout">
+            <div class="product-media reveal">
+                <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.name }}">
+                {% if item.badge %}
+                    <span class="badge {% if item.badge == 'Скидка' %}badge--sale{% elif item.badge == 'Хит' %}badge--hit{% else %}badge--new{% endif %}">{{ item.badge }}</span>
+                {% endif %}
+            </div>
+
+            <div class="product-info reveal">
+                <p class="eyebrow">{{ item.category }}</p>
+                <h1>{{ item.name }}</h1>
+
+                <div class="product-prices">
+                    <span class="price price--big">{{ item.price|price }}</span>
+                    {% if item.old_price %}
+                        <s class="old-price">{{ item.old_price|price }}</s>
+                        <span class="sale-note">Выгода {{ (item.old_price - item.price)|price }}</span>
+                    {% endif %}
+                </div>
+
+                <p class="product-description">{{ item.description }}</p>
+
+                <dl class="product-specs">
+                    <div><dt>Материал</dt><dd>{{ item.material }}</dd></div>
+                    <div><dt>Категория</dt><dd>{{ item.category }}</dd></div>
+                    <div><dt>Упаковка</dt><dd>Шкатулка и открытка в подарок</dd></div>
+                </dl>
+
+                <div class="product-actions">
+                    <button class="btn btn-primary add-cart" type="button" data-id="{{ item.id }}">
+                        Добавить в корзину
+                    </button>
+                    <button class="like-btn like-btn--wide" type="button" data-id="{{ item.id }}" aria-label="Добавить в избранное" aria-pressed="false">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 20.2s-7.4-4.4-7.4-9.5A4.1 4.1 0 0 1 12 8a4.1 4.1 0 0 1 7.4 2.7c0 5.1-7.4 9.5-7.4 9.5Z"/>
+                        </svg>
+                        <span>В избранное</span>
+                    </button>
+                </div>
+
+                <ul class="product-perks">
+                    <li>Доставка 2–5 дней по России</li>
+                    <li>Обмен или возврат в течение 14 дней</li>
+                    <li>Оплата картой или при получении</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-head">
+            <div>
+                <p class="eyebrow">К этому образу</p>
+                <h2 class="section-title">Вам может понравиться</h2>
+            </div>
+            <a class="text-link" href="{{ url_for('catalog') }}">Весь каталог →</a>
+        </div>
+
+        <div class="product-grid product-grid--three">
+            {% for product in similar %}
+                {{ product_card(product) }}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

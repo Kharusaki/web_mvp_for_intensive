@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Заколка Годэ">
+  <defs>
+    <radialGradient id="bg7" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#3b2419"/>
+      <stop offset="60%" stop-color="#241712"/>
+      <stop offset="100%" stop-color="#150e0b"/>
+    </radialGradient>
+    <linearGradient id="gold7" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fae6b8"/>
+      <stop offset="50%" stop-color="#dfa954"/>
+      <stop offset="100%" stop-color="#a76a1f"/>
+    </linearGradient>
+    <linearGradient id="lacquer7" x1="0" y1="0" x2="1" y2="0.8">
+      <stop offset="0%" stop-color="#d34a3c"/>
+      <stop offset="55%" stop-color="#a01c33"/>
+      <stop offset="100%" stop-color="#4d0a17"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#bg7)"/>
+  <circle cx="300" cy="300" r="230" fill="none" stroke="#e8bf7a" stroke-opacity=".12"/>
+  <circle cx="300" cy="300" r="190" fill="none" stroke="#e8bf7a" stroke-opacity=".07" stroke-dasharray="2 12"/>
+
+  <!-- шпилька -->
+  <path d="M150 470 L430 190" stroke="url(#gold7)" stroke-width="16" stroke-linecap="round"/>
+  <path d="M150 470 L430 190" stroke="#2a1a0d" stroke-opacity=".35" stroke-width="4"/>
+
+  <!-- основа декора -->
+  <ellipse cx="360" cy="258" rx="112" ry="84" transform="rotate(-45 360 258)" fill="url(#lacquer7)" stroke="url(#gold7)" stroke-width="8"/>
+
+  <!-- цветы -->
+  <g>
+    <circle cx="330" cy="230" r="27" fill="#1b0d09"/>
+    <g fill="url(#gold7)">
+      <ellipse cx="330" cy="202" rx="8" ry="15"/>
+      <ellipse cx="330" cy="258" rx="8" ry="15"/>
+      <ellipse cx="302" cy="230" rx="15" ry="8"/>
+      <ellipse cx="358" cy="230" rx="15" ry="8"/>
+      <ellipse cx="310" cy="210" rx="8" ry="14" transform="rotate(45 310 210)"/>
+      <ellipse cx="350" cy="250" rx="8" ry="14" transform="rotate(45 350 250)"/>
+      <ellipse cx="350" cy="210" rx="8" ry="14" transform="rotate(-45 350 210)"/>
+      <ellipse cx="310" cy="250" rx="8" ry="14" transform="rotate(-45 310 250)"/>
+    </g>
+    <circle cx="330" cy="230" r="9" fill="#f6dfa8"/>
+  </g>
+
+  <g>
+    <circle cx="392" cy="292" r="20" fill="#1b0d09"/>
+    <g fill="url(#gold7)">
+      <ellipse cx="392" cy="272" rx="6" ry="11"/>
+      <ellipse cx="392" cy="312" rx="6" ry="11"/>
+      <ellipse cx="372" cy="292" rx="11" ry="6"/>
+      <ellipse cx="412" cy="292" rx="11" ry="6"/>
+    </g>
+    <circle cx="392" cy="292" r="6" fill="#f6dfa8"/>
+  </g>
+
+  <!-- листья -->
+  <g fill="none" stroke="url(#gold7)" stroke-width="5" stroke-linecap="round">
+    <path d="M282 288 q-26 6 -38 30 q28 4 40 -14"/>
+    <path d="M408 240 q26 -8 34 -32 q-28 0 -38 20"/>
+    <path d="M352 322 q8 24 30 32 q2 -24 -16 -36"/>
+  </g>
+
+  <path d="M180 230 l5 13 13 5 -13 5 -5 13 -5 -13 -13 -5 13 -5 z" fill="#f6dfa8" fill-opacity=".7"/>
+  <path d="M448 386 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 z" fill="#f6dfa8" fill-opacity=".5"/>
+</svg>

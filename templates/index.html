@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% from "_product_card.html" import product_card %}
+
+{% block title %}ЗАРЯ — украшения в русском стиле{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container hero-inner">
+        <div class="hero-copy">
+            <p class="eyebrow">Осенняя коллекция 2026</p>
+            <h1>Украшения, в которых живёт <span class="accent">русская осень</span></h1>
+            <p class="hero-lead">
+                Бордовый, золотой и тёплый камень. Ручная работа, небольшие партии
+                и вещи, которые хочется носить каждый день.
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn btn-primary shimmer" href="{{ url_for('catalog') }}">Смотреть каталог</a>
+                <a class="btn btn-ghost" href="#featured">Хиты осени</a>
+            </div>
+
+            <ul class="hero-points">
+                <li>Ручная работа</li>
+                <li>Доставка по России</li>
+                <li>Обмен 14 дней</li>
+            </ul>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+            <div class="hero-ring"></div>
+            <div class="hero-sun"></div>
+            <svg class="hero-ornament" viewBox="0 0 200 200" fill="none">
+                <circle cx="100" cy="100" r="72" stroke="url(#gold)" stroke-width="1.2"/>
+                <circle cx="100" cy="100" r="52" stroke="url(#gold)" stroke-width="1" stroke-dasharray="3 8"/>
+                <path d="M100 20v22M100 158v22M20 100h22M158 100h22" stroke="url(#gold)" stroke-width="1.2"/>
+                <path d="M100 62c10 14 18 24 18 36a18 18 0 1 1-36 0c0-12 8-22 18-36Z" fill="url(#red)" opacity=".9"/>
+                <circle cx="100" cy="100" r="92" stroke="url(#gold)" stroke-width=".6" opacity=".5"/>
+                <defs>
+                    <linearGradient id="gold" x1="0" y1="0" x2="200" y2="200">
+                        <stop stop-color="#f2d290"/>
+                        <stop offset="1" stop-color="#b97a2a"/>
+                    </linearGradient>
+                    <linearGradient id="red" x1="70" y1="60" x2="140" y2="150">
+                        <stop stop-color="#d9483c"/>
+                        <stop offset="1" stop-color="#7a1226"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="hero-chip hero-chip--1">Гранат</span>
+            <span class="hero-chip hero-chip--2">Эмаль</span>
+            <span class="hero-chip hero-chip--3">Серебро 925</span>
+        </div>
+    </div>
+</section>
+
+<section class="benefits">
+    <div class="container benefits-grid">
+        <div class="benefit">
+            <span class="benefit-icon" aria-hidden="true">✦</span>
+            <div>
+                <h2>Ручная работа</h2>
+                <p>Каждое украшение собираем в мастерской вручную.</p>
+            </div>
+        </div>
+        <div class="benefit">
+            <span class="benefit-icon" aria-hidden="true">✧</span>
+            <div>
+                <h2>Натуральные материалы</h2>
+                <p>Серебро, латунь, камень и горячая эмаль.</p>
+            </div>
+        </div>
+        <div class="benefit">
+            <span class="benefit-icon" aria-hidden="true">❖</span>
+            <div>
+                <h2>Бережная доставка</h2>
+                <p>Упаковка с лентой и открыткой — можно дарить сразу.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="featured">
+    <div class="container">
+        <div class="section-head">
+            <div>
+                <p class="eyebrow">Выбор недели</p>
+                <h2 class="section-title">Хиты осени</h2>
+            </div>
+            <a class="text-link" href="{{ url_for('catalog') }}">Весь каталог →</a>
+        </div>
+
+        <div class="product-grid">
+            {% for product in products %}
+                {{ product_card(product) }}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="cta-banner reveal">
+            <div>
+                <p class="eyebrow">Подарок к образу</p>
+                <h2 class="section-title">Соберите осенний комплект</h2>
+                <p class="cta-text">
+                    При покупке двух украшений — фирменная шкатулка и открытка
+                    с пожеланием в подарок.
+                </p>
+            </div>
+            <a class="btn btn-primary shimmer" href="{{ url_for('catalog') }}">Подобрать украшение</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,38 @@
+{# Одна карточка товара. Вынесена отдельно, чтобы не повторять код. #}
+{% macro product_card(p) %}
+<article class="product-card reveal" data-category="{{ p.category }}">
+    <div class="card-media">
+        <a class="card-media-link" href="{{ url_for('product', product_id=p.id) }}" aria-label="{{ p.name }}">
+            <img src="{{ url_for('static', filename=p.image) }}" alt="{{ p.name }}" loading="lazy">
+        </a>
+
+        {% if p.badge %}
+            <span class="badge {% if p.badge == 'Скидка' %}badge--sale{% elif p.badge == 'Хит' %}badge--hit{% else %}badge--new{% endif %}">{{ p.badge }}</span>
+        {% endif %}
+
+        <button class="like-btn" type="button" data-id="{{ p.id }}" aria-label="Добавить в избранное" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 20.2s-7.4-4.4-7.4-9.5A4.1 4.1 0 0 1 12 8a4.1 4.1 0 0 1 7.4 2.7c0 5.1-7.4 9.5-7.4 9.5Z"/>
+            </svg>
+        </button>
+    </div>
+
+    <div class="card-body">
+        <span class="card-category">{{ p.category }}</span>
+        <h3 class="card-title">
+            <a href="{{ url_for('product', product_id=p.id) }}">{{ p.name }}</a>
+        </h3>
+
+        <div class="card-prices">
+            <span class="price">{{ p.price|price }}</span>
+            {% if p.old_price %}
+                <s class="old-price">{{ p.old_price|price }}</s>
+            {% endif %}
+        </div>
+
+        <button class="btn btn-cart add-cart" type="button" data-id="{{ p.id }}">
+            В корзину
+        </button>
+    </div>
+</article>
+{% endmacro %}

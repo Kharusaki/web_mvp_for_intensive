@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Личный кабинет — ЗАРЯ{% endblock %}
+
+{% block content %}
+<section class="page-head">
+    <div class="container">
+        <p class="eyebrow">Личный кабинет</p>
+        <h1>Вход в ЗАРЮ</h1>
+        <p class="page-lead">История заказов, избранное и персональные подборки — в одном месте.</p>
+    </div>
+</section>
+
+<section class="section section--tight">
+    <div class="container account-layout">
+        <form class="account-form" id="login-form" novalidate>
+            <h2>Войти по e-mail</h2>
+
+            <label class="field">
+                <span>E-mail</span>
+                <input type="email" name="email" placeholder="anna@example.ru" required autocomplete="email">
+            </label>
+
+            <label class="field">
+                <span>Пароль</span>
+                <input type="password" name="password" placeholder="Минимум 6 символов" minlength="6" required autocomplete="current-password">
+            </label>
+
+            <button class="btn btn-primary shimmer" type="submit">Войти</button>
+            <p class="form-note">
+                Демо-режим: данные не отправляются на сервер.
+                <a href="{{ url_for('catalog') }}">Продолжить без входа →</a>
+            </p>
+        </form>
+
+        <aside class="account-benefits">
+            <h2>Что внутри</h2>
+            <ul class="value-list">
+                <li><strong>Избранное.</strong> Лайки сохраняются прямо в браузере.</li>
+                <li><strong>Корзина.</strong> Возвращайтесь к заказу с любого устройства.</li>
+                <li><strong>Подборки.</strong> Новинки и закрытые распродажи для своих.</li>
+            </ul>
+            <div class="account-teaser">
+                <span class="eyebrow">Подарок за подписку</span>
+                <p>Скидка 10% на первый заказ — на почту после регистрации.</p>
+            </div>
+        </aside>
+    </div>
+</section>
+{% endblock %}
