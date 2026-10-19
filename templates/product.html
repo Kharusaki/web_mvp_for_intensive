@@ -16,7 +16,7 @@
 
         <div class="product-layout">
             <div class="product-media reveal">
-                <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.name }}">
+                <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.name }}" width="768" height="768">
                 {% if item.badge %}
                     <span class="badge {% if item.badge == 'Скидка' %}badge--sale{% elif item.badge == 'Хит' %}badge--hit{% else %}badge--new{% endif %}">{{ item.badge }}</span>
                 {% endif %}

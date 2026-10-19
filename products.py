@@ -1,4 +1,4 @@
-# Каталог товаров. Пока всё просто лежит в списке словарей —
+﻿# Каталог товаров. Пока всё просто лежит в списке словарей —
 # база данных для старта не нужна.
 
 PRODUCTS = [
@@ -9,7 +9,7 @@ PRODUCTS = [
         "old_price": 6200,
         "category": "Кольца",
         "material": "Серебро 925, гранат",
-        "image": "img/ring.svg",
+        "image": "img/ring.jpg",
         "badge": "Хит",
         "description": (
             "Классическое русское кольцо с вставкой граната тёмно-винного цвета. "
@@ -24,7 +24,7 @@ PRODUCTS = [
         "old_price": None,
         "category": "Серьги",
         "material": "Латунь, золочение",
-        "image": "img/earrings.svg",
+        "image": "img/earrings.jpg",
         "badge": "Новинка",
         "description": (
             "Подвесные серьги с гравировкой в традициях хохломской росписи: "
@@ -39,7 +39,7 @@ PRODUCTS = [
         "old_price": 11500,
         "category": "Колье",
         "material": "Латунь, стекло, кристаллы",
-        "image": "img/necklace.svg",
+        "image": "img/necklace.jpg",
         "badge": "Скидка",
         "description": (
             "Праздничное колье с подвеской-медальоном и россыпью красных "
@@ -54,7 +54,7 @@ PRODUCTS = [
         "old_price": None,
         "category": "Броши",
         "material": "Серебро 925, эмаль",
-        "image": "img/brooch.svg",
+        "image": "img/brooch.jpg",
         "badge": "Хит",
         "description": (
             "Брошь в форме крыла жар-птицы: градиент от бордового к золоту, "
@@ -69,7 +69,7 @@ PRODUCTS = [
         "old_price": 5100,
         "category": "Колье",
         "material": "Серебро 925, ручная резьба",
-        "image": "img/pendant.svg",
+        "image": "img/pendant.jpg",
         "badge": None,
         "description": (
             "Миниатюрный силуэт кокошника с резным орнаментом. "
@@ -84,7 +84,7 @@ PRODUCTS = [
         "old_price": None,
         "category": "Браслеты",
         "material": "Латунь, золочение, бусины",
-        "image": "img/bracelet.svg",
+        "image": "img/bracelet.jpg",
         "badge": "Новинка",
         "description": (
             "Цепь крупного плетения с бусинами гранатового цвета "
@@ -99,7 +99,7 @@ PRODUCTS = [
         "old_price": 3600,
         "category": "Заколки",
         "material": "Сталь, лаковая роспись",
-        "image": "img/hairpin.svg",
+        "image": "img/hairpin.jpg",
         "badge": "Скидка",
         "description": (
             "Металлическая заколка с лаковой росписью по эмали — "
@@ -114,7 +114,7 @@ PRODUCTS = [
         "old_price": None,
         "category": "Колье",
         "material": "Серебро 925, эмаль",
-        "image": "img/troika.svg",
+        "image": "img/troika.jpg",
         "badge": None,
         "description": (
             "Кулон с тройкой лошадей — старинный обереговый мотив. "

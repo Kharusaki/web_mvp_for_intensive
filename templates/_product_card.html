@@ -3,7 +3,7 @@
 <article class="product-card reveal" data-category="{{ p.category }}">
     <div class="card-media">
         <a class="card-media-link" href="{{ url_for('product', product_id=p.id) }}" aria-label="{{ p.name }}">
-            <img src="{{ url_for('static', filename=p.image) }}" alt="{{ p.name }}" loading="lazy">
+            <img src="{{ url_for('static', filename=p.image) }}" alt="{{ p.name }}" loading="lazy" width="768" height="768">
         </a>
 
         {% if p.badge %}

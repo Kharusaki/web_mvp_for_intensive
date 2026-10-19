@@ -244,22 +244,22 @@ dd {
 .header-inner {
     display: flex;
     align-items: center;
-    gap: 28px;
-    min-height: 76px;
+    gap: 30px;
+    min-height: 104px;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     flex-shrink: 0;
 }
 
 .logo-mark {
     display: grid;
     place-items: center;
-    width: 40px;
-    height: 40px;
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
     border: 1px solid var(--border-strong);
     color: var(--gold);
@@ -273,25 +273,27 @@ dd {
 }
 
 .logo-mark svg {
-    width: 21px;
-    height: 21px;
+    width: 28px;
+    height: 28px;
 }
 
 .logo-text strong {
     display: block;
     font-family: var(--font-head);
-    font-size: 21px;
-    font-weight: 600;
-    letter-spacing: 0.24em;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.26em;
     line-height: 1;
+    color: var(--text);
+    text-shadow: 0 2px 24px rgba(232, 191, 122, 0.18);
 }
 
 .logo-text small {
     display: block;
-    margin-top: 5px;
-    font-size: 9px;
+    margin-top: 6px;
+    font-size: 10px;
     font-weight: 600;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--muted-soft);
 }
@@ -299,16 +301,17 @@ dd {
 .main-nav {
     display: flex;
     align-items: center;
-    gap: 26px;
+    gap: 34px;
     margin: 0 auto;
 }
 
 .main-nav a {
     position: relative;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
     color: var(--muted);
-    padding: 6px 0;
+    padding: 8px 0;
     transition: color 0.2s;
 }
 
@@ -318,8 +321,9 @@ dd {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 1px;
-    background: var(--gold);
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s var(--ease);
@@ -346,11 +350,11 @@ dd {
     position: relative;
     display: grid;
     place-items: center;
-    width: 42px;
-    height: 42px;
+    width: 50px;
+    height: 50px;
     padding: 0;
     border: 1px solid transparent;
-    border-radius: 12px;
+    border-radius: 14px;
     background: transparent;
     color: var(--muted);
     cursor: pointer;
@@ -358,8 +362,8 @@ dd {
 }
 
 .icon-btn svg {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 
 .icon-btn:hover {
@@ -673,9 +677,10 @@ input:focus-visible {
 
 .section-title {
     font-family: var(--font-head);
-    font-size: clamp(1.65rem, 3.2vw, 2.4rem);
-    font-weight: 600;
-    line-height: 1.15;
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
 }
 
 /* ---------- Карточки товаров ---------- */
@@ -714,7 +719,6 @@ input:focus-visible {
     overflow: hidden;
     background: radial-gradient(circle at 50% 45%, #2c1d17, #1d1411 70%);
 }
-
 .card-media-link {
     display: block;
     height: 100%;
@@ -899,22 +903,25 @@ input:focus-visible {
 /* ---------- Заголовок страницы ---------- */
 
 .page-head {
-    padding: 56px 0 10px;
+    padding: 64px 0 12px;
     animation: fade-up 0.7s var(--ease) both;
 }
 
 .page-head h1 {
     font-family: var(--font-head);
-    font-size: clamp(2.1rem, 4.2vw, 3.3rem);
-    font-weight: 600;
-    line-height: 1.1;
+    font-size: clamp(2.6rem, 6.4vw, 5rem);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+    text-shadow: 0 4px 40px rgba(0, 0, 0, 0.45);
 }
 
 .page-lead {
-    margin-top: 14px;
+    margin-top: 18px;
     max-width: 62ch;
     color: var(--muted);
-    font-size: 15.5px;
+    font-size: 16.5px;
+    line-height: 1.7;
 }
 
 /* ---------- Фильтры каталога ---------- */
@@ -993,6 +1000,7 @@ input:focus-visible {
     width: 100%;
     aspect-ratio: 1;
     object-fit: cover;
+    object-position: center;
 }
 
 .product-info h1 {
@@ -1679,8 +1687,22 @@ input:focus-visible {
 
 @media (max-width: 860px) {
     .header-inner {
-        min-height: 68px;
+        min-height: 84px;
         gap: 12px;
+    }
+
+    .logo-mark {
+        width: 46px;
+        height: 46px;
+    }
+
+    .logo-mark svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .logo-text strong {
+        font-size: 25px;
     }
 
     .main-nav {
@@ -1710,8 +1732,8 @@ input:focus-visible {
 
     .main-nav a {
         width: 100%;
-        padding: 11px 0;
-        font-size: 15px;
+        padding: 13px 0;
+        font-size: 17px;
         border-bottom: 1px solid rgba(232, 191, 122, 0.08);
     }
 
@@ -1733,7 +1755,7 @@ input:focus-visible {
 
     .search-form {
         position: fixed;
-        top: 72px;
+        top: 92px;
         left: 16px;
         right: 16px;
         width: auto;
@@ -1907,12 +1929,18 @@ input:focus-visible {
     }
 
     .logo-mark {
-        width: 34px;
-        height: 34px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .logo-mark svg {
+        width: 22px;
+        height: 22px;
     }
 
     .logo-text strong {
-        font-size: 18px;
+        font-size: 23px;
+        letter-spacing: 0.2em;
     }
 
     .logo-text small {
@@ -1920,8 +1948,13 @@ input:focus-visible {
     }
 
     .icon-btn {
-        width: 38px;
-        height: 38px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .icon-btn svg {
+        width: 21px;
+        height: 21px;
     }
 
     .header-actions {
@@ -1980,6 +2013,25 @@ input:focus-visible {
 }
 
 @media (max-width: 400px) {
+    .header-inner {
+        gap: 2px;
+    }
+
+    .logo-mark {
+        width: 38px;
+        height: 38px;
+    }
+
+    .logo-text strong {
+        font-size: 20px;
+        letter-spacing: 0.14em;
+    }
+
+    .icon-btn {
+        width: 38px;
+        height: 38px;
+    }
+
     .product-grid,
     .product-grid--three {
         grid-template-columns: 1fr;
@@ -1987,10 +2039,6 @@ input:focus-visible {
 
     .card-media {
         aspect-ratio: 1 / 1;
-    }
-
-    .icon-btn.account-link {
-        display: none;
     }
 }
 
